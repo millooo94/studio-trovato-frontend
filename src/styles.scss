@@ -1,0 +1,89 @@
+/*-------------------------------*/
+/* Reset                         */
+/*-------------------------------*/
+
+/* Box sizing */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+  margin: 0;
+}
+/* Reset body */
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+}
+/* Reset images */
+image,
+picture {
+  display: block;
+  max-width: 100%;
+}
+/* Reset forms */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+/* Reset lists */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* Reset links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* Reset animations */
+@media (prefers-reduces-motion: reduce) {
+  *,
+  *::after,
+  *::before {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto I !important;
+  }
+}
+
+/*-------------------------------*/
+/* Utility classes               */
+/*-------------------------------*/
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

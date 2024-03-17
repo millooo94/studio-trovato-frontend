@@ -1,0 +1,80 @@
+:host {
+  color: white;
+}
+
+.container {
+  min-height: 0;
+
+  text-align: center;
+
+  background-color: transparent;
+
+  overflow: hidden;
+
+  transition: min-height 300ms ease-in, background-color 300ms ease-in,
+    align-items 0ms;
+}
+
+.container.isExpanded {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+
+  background-color: black;
+}
+
+button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+
+  width: 50px;
+  height: 50px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+button .line {
+  transition: y 300ms ease-in 300ms, rotate 300ms ease-in, opacity 0ms 300ms;
+  transform-origin: center;
+}
+button[aria-expanded="true"] .line {
+  transition: y 300ms ease-in, rotate 300ms ease-in 300ms, opacity 0ms 300ms;
+}
+
+button[aria-expanded="true"] :is(.top, .bottom) {
+  y: 45;
+}
+button[aria-expanded="true"] .top {
+  rotate: 45deg;
+}
+button[aria-expanded="true"] .middle {
+  opacity: 0;
+}
+button[aria-expanded="true"] .bottom {
+  rotate: -45deg;
+}
+
+.navigation-menu {
+  opacity: 0;
+  transition: opacity 0ms ease-in;
+}
+
+.navigation-menu ul > li {
+  cursor: pointer;
+}
+
+.isNavigationVisible {
+  opacity: 1;
+  transition: opacity 800ms ease-in;
+}

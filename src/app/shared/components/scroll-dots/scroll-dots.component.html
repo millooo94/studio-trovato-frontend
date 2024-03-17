@@ -1,0 +1,7 @@
+<div class="container">
+  <div
+    *ngFor="let dot of [].constructor(sections); index as i"
+    class="dot"
+    [ngClass]="{ currentSection: currentSection === i }"
+  ></div>
+</div>

@@ -1,0 +1,31 @@
+<div class="wrapper" (scroll)="onScroll()">
+  <app-header
+    class="header"
+    [sections]="sections"
+    (toggleMenuAction)="onToggleMenu($event)"
+  ></app-header>
+  <section #section id="value-proposition" class="value-proposition">
+    <app-value-proposition></app-value-proposition>
+  </section>
+  <section #section id="about" class="about">
+    <app-about></app-about>
+  </section>
+  <section #section id="practice-areas" class="practice-areas">
+    <app-practice-areas></app-practice-areas>
+  </section>
+  <section #section id="partners" class="partners">
+    <app-partners></app-partners>
+  </section>
+  <section #section id="consultation" class="consultation">
+    <app-consultation></app-consultation>
+  </section>
+  <section #section id="footer" class="footer">
+    <app-footer></app-footer>
+  </section>
+  <app-scroll-dots
+    class="scroll-dots"
+    [ngStyle]="{ display: isMenuOpened ? 'none' : 'block' }"
+    [sections]="sections.length"
+    [currentSection]="currentSection"
+  ></app-scroll-dots>
+</div>

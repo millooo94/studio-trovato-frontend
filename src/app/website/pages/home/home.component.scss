@@ -1,0 +1,34 @@
+.wrapper {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 60px;
+}
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.scroll-dots {
+  position: absolute;
+  top: 50%;
+  right: 1%;
+  transform: translate(-50%, -50%);
+
+  font-size: 30px;
+  font-weight: bold;
+}
+
+// SCROLLBAR
+::-webkit-scrollbar {
+  width: 0;
+}

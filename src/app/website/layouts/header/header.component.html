@@ -1,0 +1,42 @@
+<div
+  class="container flex"
+  [ngClass]="{ isExpanded: isMenuOpen.header === 'true' }"
+>
+  <button
+    aria-controls="primary-navigation"
+    [attr.aria-expanded]="isMenuOpen.header"
+    (click)="onToggle()"
+  >
+    <svg class="hamburger" viewBox="0 0 100 100" width="50" fill="#fff">
+      <rect class="line top" width="70" height="10" x="15" y="25" rx="5"></rect>
+      <rect
+        class="line middle"
+        width="70"
+        height="10"
+        x="15"
+        y="45"
+        rx="5"
+      ></rect>
+      <rect
+        class="line bottom"
+        width="70"
+        height="10"
+        x="15"
+        y="65"
+        rx="5"
+      ></rect>
+    </svg>
+  </button>
+  <nav
+    class="navigation-menu"
+    [ngClass]="{ isNavigationVisible: isMenuOpen.header === 'true' }"
+  >
+    <ul>
+      <li *ngFor="let section of sections" (click)="onClickSection(section)">
+        <a [routerLink]="'/home'" [fragment]="section.value">{{
+          section.label
+        }}</a>
+      </li>
+    </ul>
+  </nav>
+</div>
